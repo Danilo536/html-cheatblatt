@@ -5,90 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Snippets für Anfänger</title>
  <style>
-        /* Reset für den Body */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+/* Globale Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        /* Header-Styling */
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin: 0;
-        }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
 
-        /* Container für den Inhalt */
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 1rem;
-            background-color: #fff;
-            overflow: hidden;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        /* Titel-Styling */
-        h1 {
-            margin: 0.5rem 0;
-            font-size: 1.5rem;
-        }
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
 
-        /* Suchfeld-Styling */
-        .search-container {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+header h1 {
+    margin: 0;
+}
 
-        .search-container input[type="text"] {
-            width: 100%;
-            max-width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+/* Suchfeld */
+.search-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
 
-        /* Grid-Layout für Spalten */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 0 -1rem;
-        }
+.search-container input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
-        .column {
-            flex: 0 0 calc(33.33% - 2rem);
-            margin: 1rem;
-            padding: 1rem;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
-        }
+/* Grid Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-        /* Responsive Anpassungen */
-        @media (max-width: 768px) {
-            .column {
-                flex: 0 0 calc(50% - 2rem); /* Zwei Spalten nebeneinander */
-            }
+.column {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
-            .search-container {
-                margin-bottom: 0.5rem;
-            }
-        }
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
 
-        @media (max-width: 480px) {
-            .column {
-                flex: 0 0 100%; /* Eine Spalte über die gesamte Breite */
-                margin: 0 0 1rem;
-            }
+    header {
+        padding: 0.5rem;
+    }
 
-            .search-container input[type="text"] {
-                max-width: 100%; /* Volle Breite für das Suchfeld */
-            }
-        }
+    .search-container {
+        margin-bottom: 0.5rem;
+    }
+
+    .search-container input[type="text"] {
+        max-width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
     </style>
 
 <script>
