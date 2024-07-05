@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Snippets für Anfänger</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -67,3 +73,779 @@
         }
     }
 </style>
+
+
+<script>
+    function searchSnippets() {
+        var input, filter, tables, tr, td, i, j, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        tables = document.getElementsByTagName('table');
+        for (i = 0; i < tables.length; i++) {
+            tr = tables[i].getElementsByTagName('tr');
+            for (j = 1; j < tr.length; j++) {
+                tr[j].style.display = 'none';
+                td = tr[j].getElementsByTagName('td');
+                for (var k = 0; k < td.length; k++) {
+                    if (td[k]) {
+                        txtValue = td[k].textContent || td[k].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[j].style.display = '';
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Zusätzliche Funktion für die Navbar-Suche
+        var navbarFilter = filter.toLowerCase(); // Konvertiere filter zu Kleinbuchstaben
+        var navbarSnippets = document.getElementsByClassName('navbar-snippet'); // Klasse für Navbar-Snippets
+
+        for (var m = 0; m < navbarSnippets.length; m++) {
+            var snippetText = navbarSnippets[m].textContent.toLowerCase(); // Inhalt des Snippets in Kleinbuchstaben
+            var snippetContainer = navbarSnippets[m].closest('.snippet-container'); // Finde den Container des Snippets
+
+            if (snippetText.includes(navbarFilter)) {
+                snippetContainer.style.display = ''; // Zeige den Container an, falls der Filter passt
+            } else {
+                snippetContainer.style.display = 'none'; // Verstecke den Container, falls der Filter nicht passt
+            }
+        }
+    }
+</script>
+
+</head>
+<body>
+    <header>
+        <h1>Code Snippets für Anfänger</h1>
+    </header>
+    <main class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="searchSnippets()" placeholder="Nach Snippets suchen...">
+        </div>
+
+        <h2>HTML Snippets</h2>
+        <table>
+            <tr>
+                <th>Kategorie</th>
+                <th>Snippet</th>
+                <th>Bedeutung</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;!-- Kommentar --&gt;</td>
+                <td>Kommentar in HTML</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;a href="url"&gt;Linktext&lt;/a&gt;</td>
+                <td>Hyperlink erstellen</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;img src="image.jpg" alt="Beschreibung"&gt;</td>
+                <td>Bild einfügen</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;div&gt;Inhalt&lt;/div&gt;</td>
+                <td>Div-Container</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;h1&gt;Überschrift 1&lt;/h1&gt;</td>
+                <td>Überschrift 1</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;ul&gt;&lt;li&gt;Punkt 1&lt;/li&gt;&lt;li&gt;Punkt 2&lt;/li&gt;&lt;/ul&gt;</td>
+                <td>Ungeordnete Liste</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;form&gt;&lt;input type="text" name="name"&gt;&lt;/form&gt;</td>
+                <td>Ein einfaches Formular</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;table&gt;&lt;tr&gt;&lt;td&gt;Zelle&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</td>
+                <td>Tabelle erstellen</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;input type="text"&gt;</td>
+                <td>Textfeld</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;button&gt;Klick mich&lt;/button&gt;</td>
+                <td>Button erstellen</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;video controls&gt;&lt;source src="video.mp4" type="video/mp4"&gt;&lt;/video&gt;</td>
+                <td>Video einfügen</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;audio controls&gt;&lt;source src="audio.mp3" type="audio/mpeg"&gt;&lt;/audio&gt;</td>
+                <td>Audio einfügen</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;header&gt;Kopfzeile&lt;/header&gt;</td>
+                <td>Kopfzeile</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;footer&gt;Fußzeile&lt;/footer&gt;</td>
+                <td>Fußzeile</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;nav&gt;Navigation&lt;/nav&gt;</td>
+                <td>Navigation</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;section&gt;Sektion&lt;/section&gt;</td>
+                <td>Sektion</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;article&gt;Artikel&lt;/article&gt;</td>
+                <td>Artikel</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;aside&gt;Seitenleiste&lt;/aside&gt;</td>
+                <td>Seitenleiste</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;iframe src="page.html"&gt;&lt;/iframe&gt;</td>
+                <td>Iframe</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;br&gt;</td>
+                <td>Zeilenumbruch</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;hr&gt;</td>
+                <td>Horizontale Linie</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;strong&gt;Fett&lt;/strong&gt;</td>
+                <td>Fetter Text</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;em&gt;Kursiv&lt;/em&gt;</td>
+                <td>Kursiver Text</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;code&gt;Code&lt;/code&gt;</td>
+                <td>Code-Element</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;pre&gt;Vorformatierter Text&lt;/pre&gt;</td>
+                <td>Vorformatierter Text</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;blockquote&gt;Zitat&lt;/blockquote&gt;</td>
+                <td>Blockzitat</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;figure&gt;Bild mit Beschriftung&lt;/figure&gt;</td>
+                <td>Bild mit Beschriftung</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;figcaption&gt;Beschriftung&lt;/figcaption&gt;</td>
+                <td>Beschriftung für Bild</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;mark&gt;Markierter Text&lt;/mark&gt;</td>
+                <td>Markierter Text</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;progress value="70" max="100"&gt;&lt;/progress&gt;</td>
+                <td>Fortschrittsanzeige</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;time datetime="2024-01-01"&gt;1. Januar 2024&lt;/time&gt;</td>
+                <td>Datum/Zeit-Element</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;details&gt;&lt;summary&gt;Details anzeigen&lt;/summary&gt;Versteckter Inhalt&lt;/details&gt;</td>
+                <td>Details/zusammenklappbarer Inhalt</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;meter value="0.6"&gt;&lt;/meter&gt;</td>
+                <td>Messwert</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;canvas&gt;&lt;/canvas&gt;</td>
+                <td>Canvas-Element</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;svg width="100" height="100"&gt;&lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /&gt;&lt;/svg&gt;</td>
+                <td>SVG-Grafik</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;template&gt;&lt;/template&gt;</td>
+                <td>Template-Element</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td class="snippet-code">&lt;datalist&gt;&lt;/datalist&gt;</td>
+                <td>Datenliste</td>
+            </tr>
+        </table>
+
+        <h2>CSS Snippets</h2>
+        <table>
+            <tr>
+                <th>Kategorie</th>
+                <th>Snippet</th>
+                <th>Bedeutung</th>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.class { color: red; }</td>
+                <td>Textfarbe ändern</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">#id { margin: 20px; }</td>
+                <td>Margin setzen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.hidden { display: none; }</td>
+                <td>Element ausblenden</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.grid { display: grid; gap: 10px; }</td>
+                <td>CSS Grid Layout</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.flex-container { display: flex; }</td>
+                <td>Flexbox-Layout</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.text-center { text-align: center; }</td>
+                <td>Text zentrieren</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.bg-black { background-color: black; color: white; }</td>
+                <td>Schwarzer Hintergrund, weiße Schrift</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.rounded { border-radius: 10px; }</td>
+                <td>Abgerundete Ecken</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.shadow { box-shadow: 2px 2px 5px gray; }</td>
+                <td>Schattierung hinzufügen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.font-large { font-size: 2em; }</td>
+                <td>Große Schrift</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.underline { text-decoration: underline; }</td>
+                <td>Unterstrichener Text</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.italic { font-style: italic; }</td>
+                <td>Kursiver Text</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.uppercase { text-transform: uppercase; }</td>
+                <td>Großbuchstaben</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.bold { font-weight: bold; }</td>
+                <td>Fetter Text</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.padding { padding: 20px; }</td>
+                <td>Innenabstand setzen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.margin { margin: 20px; }</td>
+                <td>Außenabstand setzen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.border { border: 1px solid #000; }</td>
+                <td>Rahmen hinzufügen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.bg-image { background-image: url('image.jpg'); }</td>
+                <td>Hintergrundbild setzen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.opacity { opacity: 0.5; }</td>
+                <td>Transparenz einstellen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.cursor-pointer { cursor: pointer; }</td>
+                <td>Zeiger ändern</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.overflow-hidden { overflow: hidden; }</td>
+                <td>Überlauf verstecken</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.z-index { z-index: 10; }</td>
+                <td>Z-Index setzen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.transform-rotate { transform: rotate(45deg); }</td>
+                <td>Element drehen</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.transition { transition: all 0.3s ease; }</td>
+                <td>Übergangseffekte</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">.hover-scale:hover { transform: scale(1.1); }</td>
+                <td>Skalierung bei Hover</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td class="snippet-code">
+                    .hover-scale:hover { transform: scale(1.1); }</td>
+                    <td>Skalierung bei Hover</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.flex-column { flex-direction: column; }</td>
+                    <td>Flex-Container in Spaltenrichtung</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.flex-center { justify-content: center; align-items: center; }</td>
+                    <td>Flex-Container zentrieren</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.absolute { position: absolute; top: 0; left: 0; }</td>
+                    <td>Absolute Positionierung</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.relative { position: relative; }</td>
+                    <td>Relative Positionierung</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.sticky { position: sticky; top: 0; }</td>
+                    <td>Sticky-Positionierung</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.fixed { position: fixed; bottom: 0; }</td>
+                    <td>Fixierte Positionierung</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.inline { display: inline; }</td>
+                    <td>Inline-Element</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.block { display: block; }</td>
+                    <td>Block-Element</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.inline-block { display: inline-block; }</td>
+                    <td>Inline-Block-Element</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.hidden { visibility: hidden; }</td>
+                    <td>Sichtbarkeit ausblenden</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td class="snippet-code">.visible { visibility: visible; }</td>
+                    <td>Sichtbarkeit einblenden</td>
+                </tr>
+            </table>
+    
+            <h2>JavaScript Snippets</h2>
+            <table>
+                <tr>
+                    <th>Kategorie</th>
+                    <th>Snippet</th>
+                    <th>Bedeutung</th>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">console.log('Hello, world!');</td>
+                    <td>Nachricht in der Konsole ausgeben</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">document.getElementById('id');</td>
+                    <td>Element nach ID abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">document.querySelector('.class');</td>
+                    <td>Erstes Element nach CSS-Selektor abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.addEventListener('click', function() { });</td>
+                    <td>Event-Listener hinzufügen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">function myFunction() { }</td>
+                    <td>Funktion definieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">var x = 10;</td>
+                    <td>Variable deklarieren (var)</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">let y = 20;</td>
+                    <td>Variable deklarieren (let)</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">const z = 30;</td>
+                    <td>Konstante deklarieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">if (x &gt; 5) { }</td>
+                    <td>Bedingung if</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">for (let i = 0; i &lt; 10; i++) { }</td>
+                    <td>For-Schleife</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">while (x &lt; 10) { }</td>
+                    <td>While-Schleife</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">const arr = [1, 2, 3];</td>
+                    <td>Array deklarieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">arr.push(4);</td>
+                    <td>Element zum Array hinzufügen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">arr.pop();</td>
+                    <td>Letztes Element aus Array entfernen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">arr.length;</td>
+                    <td>Länge eines Arrays</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">const obj = { key: 'value' };</td>
+                    <td>Objekt deklarieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">obj.key;</td>
+                    <td>Objekteigenschaft abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">Object.keys(obj);</td>
+                    <td>Schlüssel eines Objekts abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">Object.values(obj);</td>
+                    <td>Werte eines Objekts abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">JSON.stringify(obj);</td>
+                    <td>Objekt zu JSON konvertieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">JSON.parse(jsonString);</td>
+                    <td>JSON zu Objekt konvertieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">localStorage.setItem('key', 'value');</td>
+                    <td>Daten in Local Storage speichern</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">localStorage.getItem('key');</td>
+                    <td>Daten aus Local Storage abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">localStorage.removeItem('key');</td>
+                    <td>Daten aus Local Storage entfernen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">localStorage.clear();</td>
+                    <td>Local Storage leeren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">setTimeout(function() { }, 1000);</td>
+                    <td>Verzögerte Ausführung</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">setInterval(function() { }, 1000);</td>
+                    <td>Wiederholte Ausführung</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">clearTimeout(timeoutID);</td>
+                    <td>Timeout abbrechen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">clearInterval(intervalID);</td>
+                    <td>Interval abbrechen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">fetch('url').then(response => response.json()).then(data => { });</td>
+                    <td>Daten von einer URL abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">fetch('url').then(response => response.json()).then(data => { });</td>
+                    <td>Daten von einer URL abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">const promise = new Promise((resolve, reject) => { });</td>
+                    <td>Promise erstellen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">promise.then(value => { }).catch(error => { });</td>
+                    <td>Promise verarbeiten</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">async function fetchData() { }</td>
+                    <td>Asynchrone Funktion definieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">await fetchData();</td>
+                    <td>Warten auf eine asynchrone Funktion</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">try { } catch (error) { }</td>
+                    <td>Fehlerbehandlung mit try-catch</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">class MyClass { constructor() { } }</td>
+                    <td>Klasse erstellen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">const myInstance = new MyClass();</td>
+                    <td>Instanz einer Klasse erstellen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">static myStaticMethod() { }</td>
+                    <td>Statische Methode in einer Klasse</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">this.myMethod = this.myMethod.bind(this);</td>
+                    <td>Methode binden</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">super();</td>
+                    <td>Basisklassen-Konstruktor aufrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">import myModule from 'myModule';</td>
+                    <td>Modul importieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">export default myFunction;</td>
+                    <td>Modul exportieren</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">document.createElement('div');</td>
+                    <td>Neues HTML-Element erstellen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.innerHTML = '&lt;p&gt;Hello&lt;/p&gt;';</td>
+                    <td>HTML-Inhalt eines Elements setzen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.textContent = 'Hello';</td>
+                    <td>Textinhalt eines Elements setzen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.classList.add('myClass');</td>
+                    <td>CSS-Klasse hinzufügen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.classList.remove('myClass');</td>
+                    <td>CSS-Klasse entfernen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.style.color = 'red';</td>
+                    <td>Inline-Stil setzen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.setAttribute('data-id', '123');</td>
+                    <td>Attribut setzen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.getAttribute('data-id');</td>
+                    <td>Attribut abrufen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.remove();</td>
+                    <td>Element entfernen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">element.cloneNode(true);</td>
+                    <td>Element klonen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">window.location.href = 'https://example.com';</td>
+                    <td>URL ändern</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">window.scrollTo(0, 0);</td>
+                    <td>Zum Seitenanfang scrollen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">navigator.geolocation.getCurrentPosition(position => { });</td>
+                    <td>Geolocation verwenden</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">alert('Hello, world!');</td>
+                    <td>Benachrichtigung anzeigen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">confirm('Are you sure?');</td>
+                    <td>Bestätigungsdialog anzeigen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">prompt('What is your name?');</td>
+                    <td>Eingabeaufforderung anzeigen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">window.addEventListener('resize', function() { });</td>
+                    <td>Event-Listener für Fenstergröße hinzufügen</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">document.title = 'New Title';</td>
+                    <td>Titel der Webseite ändern</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">history.back();</td>
+                    <td>Zurück zur vorherigen Seite</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">history.forward();</td>
+                    <td>Zur nächsten Seite</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td class="snippet-code">new Date().toLocaleDateString();</td>
+                    <td>Aktuelles Datum abrufen</td>
+                </tr>
+            </table>
+    
+            <footer>
+                <p>&copy; 2024 Webentwicklungstutorial</p>
+            </footer>
+        </body>
+    </html>
+    
